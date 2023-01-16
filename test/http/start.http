@@ -1,0 +1,20 @@
+@baseurl = http://localhost:6969
+
+###
+
+GET {{baseurl}}
+
+
+####
+@message = Hello there!
+# @name firstmessage
+POST {{baseurl}}/echo
+Content-Type: text/plain
+
+{{message}}
+
+
+###
+POST {{baseurl}}/echo
+
+{{firstmessage.response.body.*}}

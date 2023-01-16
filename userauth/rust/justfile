@@ -1,0 +1,6 @@
+default: run
+
+# Developper's targets
+run:
+  @echo "Starting development server..."
+  cargo run
