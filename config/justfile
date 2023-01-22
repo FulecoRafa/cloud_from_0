@@ -1,0 +1,6 @@
+up resource: (build resource)
+	docker rm -f cloud_from_0__resource__{{resource}}
+	docker run -d --name cloud_from_0__resource__{{resource}} cloud_from_0__resource__{{resource}}
+
+build resource:
+	docker build -t cloud_from_0__resource__{{resource}} {{resource}}
