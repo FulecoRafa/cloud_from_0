@@ -1,0 +1,9 @@
+gen_dummy_data_target := "cloud_from_0__gen_dummy_data"
+
+gen_dummy_data:
+	# Start docker with go and generate dummy data on the background
+	docker build -t {{gen_dummy_data_target}} -f Dockerfile .
+	docker rm -f {{gen_dummy_data_target}} || true
+	docker run -d --name {{gen_dummy_data_target}} {{gen_dummy_data_target}}
+	# Copy the generated data to the host
+	docker cp {{gen_dummy_data_target}}:app/data.sql ../../data/dummy/data.sql

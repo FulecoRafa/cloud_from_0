@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "webservers/rust"
+		},
+		{
+			"path": "devtools/gen_dummy_data"
+		}
+	],
+	"settings": {}
+}

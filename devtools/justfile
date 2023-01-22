@@ -1,0 +1,2 @@
+gen_dummy_data:
+  @just gen_dummy_data/
