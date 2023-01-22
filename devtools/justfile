@@ -1,2 +1,2 @@
-gen_dummy_data:
-  @just gen_dummy_data/
+gen_init_sql:
+  @just gen_init_sql/

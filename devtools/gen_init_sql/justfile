@@ -1,0 +1,9 @@
+gen_init_sql_target := "cloud_from_0__gen_init_sql"
+
+gen_init_sql:
+	# Start docker with go and generate dummy data on the background
+	docker build -t {{gen_init_sql_target}} -f Dockerfile .
+	docker rm -f {{gen_init_sql_target}} || true
+	docker run -d --name {{gen_init_sql_target}} {{gen_init_sql_target}}
+	# Copy the generated data to the host
+	docker cp {{gen_init_sql_target}}:app/data.sql ../../config/postgres/initdb.sql
